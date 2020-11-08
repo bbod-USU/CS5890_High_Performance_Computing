@@ -11,9 +11,9 @@ float *GenerateArray();
 void ComputeHistogram(float *data_array, int rank, int &world_size);
 
 void PrintResults(float *my_bin_max, float *my_bin_min, int *my_bins);
-
+long stoi(const char *s);
 void PrintTimingResults();
-
+float stof(const char* s);
 int bin_count, data_count;
 float min_meas, max_meas;
 const int Master = 0;
@@ -31,10 +31,10 @@ int main(int argc, char *argv[]) {
     float* data_array;
     if(!rank) {
         ///GetInputData
-        bin_count = static_cast<int>(std::stoi(argv[1]));
-        data_count = static_cast<int>(std::stoi(argv[4]));
-        min_meas = static_cast<int>(std::stof(argv[2]));
-        max_meas = static_cast<int>(std::stof(argv[3]));
+        bin_count = stoi(argv[1]);//static_cast<int>(argv[1]);
+        data_count = stoi(argv[4]);//static_cast<int>(std::stoi(argv[4]));
+        min_meas = stof(argv[2]);//static_cast<int>(std::stof(argv[2]));
+        max_meas = stof(argv[3]);//static_cast<int>(std::stof(argv[3]));
 
         ///Create the array of floats
         data_array = static_cast<float *> (calloc(data_count, sizeof(float)));
@@ -54,6 +54,36 @@ int main(int argc, char *argv[]) {
     MPI_Finalize();
     return 0;
 }
+long stoi(const char *s)
+{
+    long i;
+    i = 0;
+    while(*s >= '0' && *s <= '9')
+    {
+        i = i * 10 + (*s - '0');
+        s++;
+    }
+    return i;
+}
+float stof(const char* s){
+    float rez = 0, fact = 1;
+    if (*s == '-'){
+        s++;
+        fact = -1;
+    };
+    for (int point_seen = 0; *s; s++){
+        if (*s == '.'){
+            point_seen = 1;
+            continue;
+        };
+        int d = *s - '0';
+        if (d >= 0 && d <= 9){
+            if (point_seen) fact /= 10.0f;
+            rez = rez * 10.0f + (float)d;
+        };
+    };
+    return rez * fact;
+};
 
 void PrintTimingResults() {
     std::cout << std::fixed << "Timing Results \n\t"
