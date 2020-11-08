@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/brady.bodily/Documents/CS5890_High_Performance_Computing/MPIHistoGram/main.cpp
+iostream
+-
+string
+-
+mpi.h
+-
+cstdlib
+-
+valarray
+-
+vector
+-
+
+/Users/brady.bodily/mpi/include/mpi.h
+stddef.h
+-
+mpi_portable_platform.h
+/Users/brady.bodily/mpi/include/mpi_portable_platform.h
+openmpi/ompi/mpi/cxx/mpicxx.h
+/Users/brady.bodily/mpi/include/openmpi/ompi/mpi/cxx/mpicxx.h
+
+/Users/brady.bodily/mpi/include/mpi_portable_platform.h
+omp.h
+/Users/brady.bodily/mpi/include/omp.h
+omp.h
+/Users/brady.bodily/mpi/include/omp.h
+

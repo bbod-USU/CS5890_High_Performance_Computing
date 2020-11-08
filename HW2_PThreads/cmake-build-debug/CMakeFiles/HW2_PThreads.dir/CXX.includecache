@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/brady.bodily/Documents/CS5890_High_Performance_Computing/HW2_PThreads/main.cpp
+iostream
+-
+pthread.h
+-
+cstdlib
+-
+

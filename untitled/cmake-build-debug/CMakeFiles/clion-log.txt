@@ -1,0 +1,4 @@
+"/Users/brady.bodily/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/202.6948.80/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/brady.bodily/Documents/CS5890_High_Performance_Computing/untitled
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/brady.bodily/Documents/CS5890_High_Performance_Computing/untitled/cmake-build-debug

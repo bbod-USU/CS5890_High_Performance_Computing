@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/brady.bodily/Documents/CS5890_High_Performance_Computing/HW3/main.cpp
+iostream
+-
+omp.h
+-
+string
+-
+iomanip
+-
+
+/usr/local/include/omp.h
+stdlib.h
+-
+stdint.h
+-
+
